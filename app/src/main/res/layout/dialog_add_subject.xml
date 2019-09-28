@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="viewModel" type="com.matveyev.buyfaster.AddSubjectViewModel"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <com.matveyev.buyfaster.uicomponents.CustomAutoCompleteTextView
+                android:id="@+id/department"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Department"
+                android:textColor="#000000"
+                android:textCursorDrawable="@null"
+                android:inputType="textCapCharacters"
+                android:text="@={viewModel.subject.department}"
+                android:textSize="24sp"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Product"
+                android:inputType="textCapSentences|textMultiLine"
+                android:text="@={viewModel.subject.description}"
+                android:textSize="20sp"/>
+    </LinearLayout>
+</layout>

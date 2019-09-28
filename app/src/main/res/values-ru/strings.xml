@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Быстрее покупай</string>
+    <string name="Add">Добавить</string>
+    <string name="Send">Отправить</string>
+    <string name="x">x</string>
+    <string name="Department">Отдел</string>
+    <string name="Product">Товар</string>
+    <string name="Remember">Запомнить</string>
+    <string name="Nevermind">Неважно</string>
+    <string name="SMS">СМС</string>
+    <string name="Viber">Вайбер</string>
+</resources>

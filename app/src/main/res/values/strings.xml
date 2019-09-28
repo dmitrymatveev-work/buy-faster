@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Buy faster</string>
+    <string name="Add">Add</string>
+    <string name="Send">Send</string>
+    <string name="x">x</string>
+    <string name="Department">Department</string>
+    <string name="Product">Product</string>
+    <string name="Remember">Remember</string>
+    <string name="Nevermind">Nevermind</string>
+    <string name="SMS">SMS</string>
+    <string name="Viber">Viber</string>
+</resources>

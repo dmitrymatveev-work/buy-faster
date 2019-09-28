@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="viewModel" type="com.matveyev.buyfaster.vms.DepartmentVM"/>
+        <variable name="parentViewModel" type="com.matveyev.buyfaster.AddSubjectViewModel"/>
+    </data>
+    <LinearLayout
+            android:descendantFocusability="blocksDescendants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.title}"
+                android:textSize="20sp"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingRight="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/x"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:onClick="@{() -> parentViewModel.deleteDepartmentAsync(viewModel)}"/>
+    </LinearLayout>
+</layout>
