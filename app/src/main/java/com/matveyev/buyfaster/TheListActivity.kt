@@ -25,6 +25,7 @@ class TheListActivity : AppCompatActivity() {
     private val viberPackageName = "com.viber.voip"
     private val skypePackageName = "com.skype.raider"
     private val whatsappPackageName = "com.whatsapp"
+    private lateinit var smsPackageName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,12 +66,12 @@ class TheListActivity : AppCompatActivity() {
         }
 
         try {
-            val smsPackageName = "com.android.mms"
+            smsPackageName = "com.android.mms"
             val icon = applicationContext.packageManager.getApplicationIcon(smsPackageName)
             smsButton.setImageDrawable(icon)
         } catch (e: Exception) {
             try{
-                val smsPackageName = getSmsPackageName()
+                smsPackageName = getSmsPackageName()
                 val icon = applicationContext.packageManager.getApplicationIcon(smsPackageName)
                 smsButton.setImageDrawable(icon)
             } catch (e: Exception) {
@@ -122,12 +123,7 @@ class TheListActivity : AppCompatActivity() {
     }
 
     fun sms(view: View) {
-        val content = viewModel.getMessageContent()
-        val sendIntent = Intent(Intent.ACTION_VIEW)
-        sendIntent.type = "vnd.android-dir/mms-sms"
-        sendIntent.putExtra("sms_body", content)
-        startActivity(sendIntent)
-        hideSendButtons()
+        send(smsPackageName)
     }
 
     private fun hideSendButtons() {
